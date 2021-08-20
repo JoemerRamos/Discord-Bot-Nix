@@ -7,12 +7,11 @@ const { keepAlive } = require('./server');
 const bot = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
 const { createAnimeEmbedNextEp } = require('./mal-api/utilFunctions');
 
-//const { TOKEN } = process.env;
+const { TOKEN } = process.env;
 //const TOKEN = "$TOKEN"
 const cmdHandler = new Discord.Collection();
-
 keepAlive();
-bot.login("ODE1NjExMzYxOTE1OTYxMzQ1.YDu7Rg.pIy-yacnZ8pz_VH4rg9mjgq4KAI");
+bot.login(TOKEN);
 
 // Adds commands to a map collection so that we can dynamically access commands for interactions
 async function setCommands(cmdController) {
